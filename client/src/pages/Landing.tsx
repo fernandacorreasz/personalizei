@@ -99,8 +99,8 @@ export default function Landing() {
       <section className="selection-hero" id="produtos">
         <div className="selection-hero-copy">
           <span className="eyebrow"><Sparkles size={15} /> feito para você escolher sem pressa</span>
-          <h1>Qual produto vai ter <em>a sua cara?</em></h1>
-          <p>Escolha um produto e comece a personalizar. Sua ideia pode virar presente, detalhe favorito ou simplesmente algo que é só seu.</p>
+          <h1>Escolha algo para <em>chamar de seu.</em></h1>
+          <p>Encontre o produto perfeito para transformar sua ideia em algo especial, feito do seu jeitinho.</p>
         </div>
       </section>
 
