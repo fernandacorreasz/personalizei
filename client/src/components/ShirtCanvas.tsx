@@ -4,7 +4,7 @@ import { ContactShadows, Environment, OrbitControls, useGLTF } from "@react-thre
 import { useEffect } from "react";
 import * as THREE from "three";
 
-const MODEL_URL = "/manus-storage/atrye-shirt-baked_cdef6abd.glb";
+const MODEL_URL = "/assets/atrye-shirt-baked.glb";
 
 type GLTFResult = { nodes: { T_Shirt_male: { geometry: THREE.BufferGeometry } }; materials: { lambert1: THREE.MeshStandardMaterial } };
 

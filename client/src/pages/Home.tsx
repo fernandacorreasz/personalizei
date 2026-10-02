@@ -170,7 +170,7 @@ export default function Home() {
     <main className="atelier-shell">
       <header className="topbar">
         <div className="brand-lockup">
-          <img className="brand-mark-image" src="/manus-storage/atelier-mark_f6f73a48.png" alt="" aria-hidden="true" />
+          <img className="brand-mark-image" src="/assets/atelier-mark.png" alt="" aria-hidden="true" />
           <div><div className="brand-name">ATRYÊ</div><div className="brand-kicker">personalizados feitos pra ter a sua cara</div></div>
         </div>
         <nav className="main-nav"><button className="active"><ShirtIcon /> Camiseta</button><a href="#como-funciona">Como funciona</a></nav>
