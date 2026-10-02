@@ -169,10 +169,10 @@ export default function Home() {
   return (
     <main className="atelier-shell">
       <header className="topbar">
-        <div className="brand-lockup">
+        <a className="brand-lockup brand-home-link" href="/" aria-label="Voltar para escolher uma personalização">
           <img className="brand-mark-image" src="/assets/atelier-mark.png" alt="" aria-hidden="true" />
           <div><div className="brand-name">ATRYÊ</div><div className="brand-kicker">personalizados feitos pra ter a sua cara</div></div>
-        </div>
+        </a>
         <nav className="main-nav"><button className="active"><ShirtIcon /> Camiseta</button><a href="#como-funciona">Como funciona</a></nav>
         <div className="top-actions">
           <span className="save-state"><span className="save-dot" /> Salvamento local ativo</span>
