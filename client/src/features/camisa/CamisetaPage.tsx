@@ -25,7 +25,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { toast } from "sonner";
-import ShirtCanvas from "@/components/ShirtCanvas";
+import ShirtCanvas from "@/features/camisa/components/ShirtCanvas";
 
 const initialLogo = { x: 50, y: 38, scale: 26, rotation: 0 };
 type View = "front" | "back";
@@ -169,10 +169,10 @@ export default function Home() {
   return (
     <main className="atelier-shell">
       <header className="topbar">
-        <div className="brand-lockup">
-          <img className="brand-mark-image" src="/assets/atelier-mark.png" alt="" aria-hidden="true" />
+        <a className="brand-lockup brand-home-link" href="/" aria-label="Voltar para escolher uma personalização">
+          <img className="brand-mark-image" src="/assets/shared/atelier-mark.png" alt="" aria-hidden="true" />
           <div><div className="brand-name">ATRYÊ</div><div className="brand-kicker">personalizados feitos pra ter a sua cara</div></div>
-        </div>
+        </a>
         <nav className="main-nav"><button className="active"><ShirtIcon /> Camiseta</button><a href="#como-funciona">Como funciona</a></nav>
         <div className="top-actions">
           <span className="save-state"><span className="save-dot" /> Salvamento local ativo</span>

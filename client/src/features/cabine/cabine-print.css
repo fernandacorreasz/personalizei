@@ -1,0 +1,87 @@
+@page {
+  size: 56mm 210mm;
+  margin: 0;
+}
+
+@media print {
+  html,
+  .cabine-module {
+    width: 56mm;
+    min-width: 56mm;
+    height: 210mm;
+    min-height: 210mm;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  .cabine-module {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cabine-app-shell,
+  .cabine-workspace,
+  .cabine-content-grid,
+  .cabine-preview-column {
+    width: 56mm !important;
+    min-width: 56mm !important;
+    height: 210mm !important;
+    min-height: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    background: #fff !important;
+  }
+
+  .cabine-strip-card {
+    width: 56mm !important;
+    height: 210mm !important;
+    min-height: 210mm !important;
+    margin: 0 !important;
+    padding: 4mm 4mm 3.5mm !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    transform: none !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+  }
+
+  .cabine-strip-title {
+    height: 12mm;
+    padding: 1mm 0 2mm !important;
+    font-size: 5.2mm !important;
+    line-height: 9mm;
+  }
+
+  .cabine-strip-photo {
+    width: 48mm !important;
+    height: 54mm !important;
+    margin-bottom: 2mm !important;
+  }
+
+  .cabine-strip-footer {
+    height: 8mm;
+    padding-top: 1mm !important;
+    font-size: 3.1mm !important;
+    line-height: 6mm;
+  }
+
+  .cabine-strip-card .cabine-decor-a {
+    top: 1mm !important;
+    left: 1.5mm !important;
+    font-size: 6mm !important;
+  }
+
+  .cabine-strip-card .cabine-decor-b {
+    top: 1mm !important;
+    right: 2mm !important;
+    font-size: 4mm !important;
+  }
+
+  .cabine-strip-card .cabine-decor-c {
+    bottom: 10mm !important;
+    right: 2mm !important;
+    font-size: 4mm !important;
+  }
+}
