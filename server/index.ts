@@ -19,7 +19,9 @@ async function startServer() {
   app.use(express.static(staticPath));
 
   // Handle client-side routing - serve index.html for all routes
-  app.get("*", (_req, res) => {
+  // Middleware sem padrão de path evita o erro "Missing parameter name" do
+  // path-to-regexp em versões recentes do Express.
+  app.use((_req, res) => {
     res.sendFile(path.join(staticPath, "index.html"));
   });
 
