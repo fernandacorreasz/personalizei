@@ -39,7 +39,7 @@ pnpm build
 
 ## Assets WebDev
 
-O modelo GLB e os elementos gráficos persistentes são servidos pelo armazenamento do WebDev via `/manus-storage/`. Em ambiente WebDev, mantenha os assets persistentes configurados para os caminhos referenciados em `client/src/components/ShirtCanvas.tsx`, `client/src/pages/Home.tsx` e `client/src/index.css`.
+O modelo GLB e os elementos gráficos estão versionados em `client/public/assets/` e são publicados como arquivos estáticos pela Vercel.
 
 ## Estrutura principal
 
