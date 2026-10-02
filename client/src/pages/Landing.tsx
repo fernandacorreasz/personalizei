@@ -8,6 +8,7 @@ type ProductCard = {
   description: string;
   image: string;
   available: boolean;
+  href?: string;
 };
 
 const products: ProductCard[] = [
@@ -15,35 +16,44 @@ const products: ProductCard[] = [
     title: "Canecas",
     eyebrow: "Em breve",
     description: "Sua arte em cada gole.",
-    image: "/assets/card-caneca.jpg",
+    image: "/assets/home/card-caneca.jpg",
     available: false,
   },
   {
     title: "Camisetas",
     eyebrow: "Disponível agora",
     description: "Vista suas ideias.",
-    image: "/assets/card-camiseta.jpg",
+    image: "/assets/home/card-camiseta.jpg",
     available: true,
+    href: "/camisa",
+  },
+  {
+    title: "Cabine de fotos",
+    eyebrow: "Disponível agora",
+    description: "Crie uma tirinha cheia de carinho.",
+    image: "/assets/cabine/card-cabine.jpg",
+    available: true,
+    href: "/cabine",
   },
   {
     title: "Jaquetas",
     eyebrow: "Em breve",
     description: "Um estilo só seu.",
-    image: "/assets/card-jaquetas.jpg",
+    image: "/assets/home/card-jaquetas.jpg",
     available: false,
   },
   {
     title: "Garrafas",
     eyebrow: "Em breve",
     description: "Leve sua personalidade junto.",
-    image: "/assets/card-garrafas.jpg",
+    image: "/assets/home/card-garrafas.jpg",
     available: false,
   },
   {
     title: "Bottons",
     eyebrow: "Em breve",
     description: "Pequenos detalhes, grandes ideias.",
-    image: "/assets/card-bottons.jpg",
+    image: "/assets/home/card-bottons.jpg",
     available: false,
   },
 ];
@@ -70,7 +80,7 @@ function ProductCardView({ product }: { product: ProductCard }) {
   );
 
   if (product.available) {
-    return <Link href="/camisa" className="selection-card-link">{card}</Link>;
+    return <Link href={product.href ?? "/"} className="selection-card-link">{card}</Link>;
   }
 
   return (
