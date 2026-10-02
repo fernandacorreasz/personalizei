@@ -1,12 +1,4 @@
-import {
-  ArrowRight,
-  CircleDot,
-  Coffee,
-  CupSoda,
-  LockKeyhole,
-  Shirt,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, LockKeyhole, Sparkles } from "lucide-react";
 import { Link } from "wouter";
 import { toast } from "sonner";
 
@@ -14,71 +6,66 @@ type ProductCard = {
   title: string;
   eyebrow: string;
   description: string;
-  icon: typeof Shirt;
-  accent: string;
+  image: string;
   available: boolean;
 };
 
 const products: ProductCard[] = [
   {
-    title: "Camiseta",
-    eyebrow: "Disponível agora",
-    description: "Posicione sua arte em uma camiseta 3D e visualize frente e costas.",
-    icon: Shirt,
-    accent: "cherry",
-    available: true,
-  },
-  {
-    title: "Caneca",
+    title: "Canecas",
     eyebrow: "Em breve",
-    description: "Uma nova bancada para criar presentes com a sua identidade.",
-    icon: Coffee,
-    accent: "lilac",
+    description: "Sua arte em cada gole.",
+    image: "/assets/card-caneca.jpg",
     available: false,
   },
   {
-    title: "Bottons",
+    title: "Camisetas",
+    eyebrow: "Disponível agora",
+    description: "Vista suas ideias.",
+    image: "/assets/card-camiseta.jpg",
+    available: true,
+  },
+  {
+    title: "Jaquetas",
     eyebrow: "Em breve",
-    description: "Pequenos detalhes, grandes ideias e muita personalidade.",
-    icon: CircleDot,
-    accent: "butter",
+    description: "Um estilo só seu.",
+    image: "/assets/card-jaquetas.jpg",
     available: false,
   },
   {
     title: "Garrafas",
     eyebrow: "Em breve",
-    description: "Leve sua arte para todos os lugares com uma garrafa personalizada.",
-    icon: CupSoda,
-    accent: "mint",
+    description: "Leve sua personalidade junto.",
+    image: "/assets/card-garrafas.jpg",
     available: false,
   },
   {
-    title: "Jaquetas",
+    title: "Bottons",
     eyebrow: "Em breve",
-    description: "Uma camada extra para vestir suas ideias do seu jeito.",
-    icon: Shirt,
-    accent: "cocoa",
+    description: "Pequenos detalhes, grandes ideias.",
+    image: "/assets/card-bottons.jpg",
     available: false,
   },
 ];
 
 function ProductCardView({ product }: { product: ProductCard }) {
-  const Icon = product.icon;
   const card = (
-    <div className={`selection-card ${product.available ? "is-available" : "is-locked"} accent-${product.accent}`}>
-      <div className="selection-card-topline">
-        <span>{product.eyebrow}</span>
-        {product.available ? <ArrowRight size={18} /> : <LockKeyhole size={15} />}
+    <div className={`selection-card ${product.available ? "is-available" : "is-locked"}`}>
+      <div className="selection-card-media">
+        <img src={product.image} alt={`Exemplo de ${product.title.toLowerCase()} personalizados`} />
+        <span className="selection-card-badge">{product.available ? "✦" : <LockKeyhole size={14} />}</span>
       </div>
-      <div className="selection-card-art" aria-hidden="true">
-        <Icon strokeWidth={1.25} />
-        <span className="selection-card-spark">✦</span>
+      <div className="selection-card-body">
+        <div className="selection-card-topline">
+          <span>{product.eyebrow}</span>
+          {product.available && <ArrowRight size={18} />}
+        </div>
+        <div className="selection-card-copy">
+          <h2>{product.title}</h2>
+          <p>{product.description}</p>
+        </div>
+        <span className="selection-card-cta">{product.available ? "Personalizar" : "Chegando em breve"}{product.available && <ArrowRight size={15} />}</span>
       </div>
-      <div className="selection-card-copy">
-        <h2>{product.title}</h2>
-        <p>{product.description}</p>
-      </div>
-      <span className="selection-card-cta">{product.available ? "Personalizar agora" : "Estamos preparando"}</span>
     </div>
   );
 
@@ -87,7 +74,7 @@ function ProductCardView({ product }: { product: ProductCard }) {
   }
 
   return (
-    <button type="button" className="selection-card-button" onClick={() => toast.info(`${product.title} entra na próxima coleção de personalizações.`)}>
+    <button type="button" className="selection-card-button" onClick={() => toast.info(`${product.title} está sendo preparado com carinho.`)}>
       {card}
     </button>
   );
@@ -97,29 +84,33 @@ export default function Landing() {
   return (
     <main className="selection-page">
       <header className="selection-topbar">
-        <a className="selection-brand" href="/" aria-label="ATRYÊ — início">
+        <a className="selection-brand" href="/" aria-label="Personalizei — início">
           <span className="selection-brand-mark">✦</span>
-          <span><strong>ATRYÊ</strong><small>personalizados feitos pra ter a sua cara</small></span>
+          <span><strong>Personalizei</strong><small>ideias feitas pra ter a sua cara</small></span>
         </a>
+        <nav className="selection-nav" aria-label="Navegação principal">
+          <a className="active" href="#produtos">Produtos</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#minha-selecao">Minha seleção ♡</a>
+        </nav>
         <span className="selection-top-note">SWEET STUDIO × WEIRD CUTE</span>
       </header>
 
-      <section className="selection-hero">
+      <section className="selection-hero" id="produtos">
         <div className="selection-hero-copy">
-          <span className="eyebrow"><Sparkles size={13} /> escolha sua personalização</span>
-          <h1>Qual ideia você quer <em>vestir hoje?</em></h1>
-          <p>Comece escolhendo o produto. Depois você solta a criatividade, posiciona sua arte e vê tudo ganhar forma.</p>
+          <span className="eyebrow"><Sparkles size={15} /> feito para você escolher sem pressa</span>
+          <h1>Qual produto vai ter <em>a sua cara?</em></h1>
+          <p>Escolha um produto e comece a personalizar. Sua ideia pode virar presente, detalhe favorito ou simplesmente algo que é só seu.</p>
         </div>
-        <div className="selection-stamp" aria-hidden="true"><span>ATRYÊ</span><small>feito à sua maneira</small></div>
       </section>
 
       <section className="selection-grid" aria-label="Tipos de personalização">
         {products.map((product) => <ProductCardView key={product.title} product={product} />)}
       </section>
 
-      <footer className="selection-footer">
-        <span><b>01</b> / catálogo de possibilidades</span>
-        <span>uma ideia de cada vez, do seu jeito <i>✦</i></span>
+      <footer className="selection-footer" id="como-funciona">
+        <span><b>01</b> / escolha uma categoria</span>
+        <span>crie do seu jeitinho <i>✦</i></span>
       </footer>
     </main>
   );
