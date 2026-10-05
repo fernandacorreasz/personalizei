@@ -5,6 +5,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import PhotoBoothPage from "./features/cabine/PhotoBoothPage";
 import CamisetaPage from "./features/camisa/CamisetaPage";
+import CanecaPage from "./features/caneca/CanecaPage";
 import Landing from "./pages/Landing";
 import { Route, Switch } from "wouter";
 
@@ -17,6 +18,7 @@ export default function App() {
           <Switch>
             <Route path="/camisa" component={CamisetaPage} />
             <Route path="/cabine" component={PhotoBoothPage} />
+            <Route path="/caneca" component={CanecaPage} />
             <Route path="/" component={Landing} />
             <Route component={Landing} />
           </Switch>

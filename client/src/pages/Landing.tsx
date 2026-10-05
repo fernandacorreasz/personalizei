@@ -14,10 +14,11 @@ type ProductCard = {
 const products: ProductCard[] = [
   {
     title: "Canecas",
-    eyebrow: "Em breve",
+    eyebrow: "Disponível agora",
     description: "Sua arte em cada gole.",
     image: "/assets/home/card-caneca.jpg",
-    available: false,
+    available: true,
+    href: "/caneca",
   },
   {
     title: "Camisetas",
