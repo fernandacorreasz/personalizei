@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+.caneca-module {
+  --caneca-blue: #4E5F93;
+  --caneca-pink: #E98DAA;
+  --caneca-lilac: #F1EEFA;
+  font-family: 'Manrope', Arial, sans-serif;
+}
+
+.caneca-module.caneca-paper-noise {
+  background-image: radial-gradient(rgba(78, 95, 147, 0.06) 0.55px, transparent 0.55px);
+  background-size: 8px 8px;
+}
+
+.caneca-module .soft-grid {
+  background-image: linear-gradient(rgba(78, 95, 147, 0.042) 1px, transparent 1px), linear-gradient(90deg, rgba(78, 95, 147, 0.042) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 100%);
+}
+
+.caneca-module .caneca-stage-canvas canvas { display: block; cursor: grab; touch-action: none; }
+.caneca-module .caneca-stage-canvas canvas:active { cursor: grabbing; }
+
+.caneca-module .caneca-range-editor {
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(78, 95, 147, 0.16);
+  accent-color: #E98DAA;
+}
+
+.caneca-module .caneca-range-editor::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #E98DAA;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 1px 4px rgba(78, 95, 147, 0.26);
+}
+
+.caneca-module .caneca-range-editor::-moz-range-thumb {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #E98DAA;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 1px 4px rgba(78, 95, 147, 0.26);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .caneca-module button, .caneca-module input, .caneca-module select, .caneca-module textarea {
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}

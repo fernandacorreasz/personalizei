@@ -3,7 +3,11 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
+import PhotoBoothPage from "./features/cabine/PhotoBoothPage";
+import CamisetaPage from "./features/camisa/CamisetaPage";
+import CanecaPage from "./features/caneca/CanecaPage";
+import Landing from "./pages/Landing";
+import { Route, Switch } from "wouter";
 
 export default function App() {
   return (
@@ -11,7 +15,13 @@ export default function App() {
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster position="bottom-right" />
-          <Home />
+          <Switch>
+            <Route path="/camisa" component={CamisetaPage} />
+            <Route path="/cabine" component={PhotoBoothPage} />
+            <Route path="/caneca" component={CanecaPage} />
+            <Route path="/" component={Landing} />
+            <Route component={Landing} />
+          </Switch>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

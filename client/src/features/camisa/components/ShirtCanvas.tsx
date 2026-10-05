@@ -4,9 +4,9 @@ import { ContactShadows, Environment, OrbitControls, useGLTF } from "@react-thre
 import { useEffect } from "react";
 import * as THREE from "three";
 
-const MODEL_URL = "/assets/atrye-shirt-baked.glb";
+const MODEL_URL = "/assets/camisa/atrye-shirt-baked.glb";
 
-type GLTFResult = { nodes: { T_Shirt_male: { geometry: THREE.BufferGeometry } }; materials: { lambert1: THREE.MeshStandardMaterial } };
+type GLTFResult = { nodes: { T_Shirt_male: { geometry: any } }; materials: { lambert1: any } };
 
 function ShirtModel({ color, back }: { color: string; back: boolean }) {
   const { nodes, materials } = useGLTF(MODEL_URL) as unknown as GLTFResult;
